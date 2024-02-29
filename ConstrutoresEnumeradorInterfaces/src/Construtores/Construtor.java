@@ -1,6 +1,13 @@
 package Construtores;
 
+/*AQUI!
+ * CONSTRUTOR - Serve para passar parâmetros.
+ * ENUM - P q criar em uma tabela 3 dados, por ex.
+ * 		O Enum serve para isso */
+
+import Construtores.Aluno.MATRICULA;
 import Construtores.Aluno.STATUS;
+
 
 public class Construtor {
 
@@ -18,6 +25,10 @@ public class Construtor {
 		}
 		
 		// imprimindo situa��o do aluno
-		System.out.println("A m�dia do aluno � : " + alu.calcularMediaAluno() + " e o aluno est� " + alu.situacaoAluno);
+		System.out.println("A média do aluno é : " + alu.calcularMediaAluno() + " e o aluno está " + alu.situacaoAluno);
+		
+		//usa enum MATRICULA
+		alu.situacaoMatricula=MATRICULA.MATRICULADO;
+		System.out.println("O aluno está: "+ alu.situacaoMatricula);
 	}
 }
