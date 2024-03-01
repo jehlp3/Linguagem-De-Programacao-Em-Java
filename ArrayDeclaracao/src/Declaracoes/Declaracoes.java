@@ -1,7 +1,8 @@
+package Declaracoes;
 
 public class Declaracoes {
 
-	public static void main (string[] args) {
+	public static void main (String[] args) {
 		int[] numeros = new int[4];
 		
 		int[] numeros2;
@@ -26,9 +27,9 @@ public class Declaracoes {
 				meuArray2 [7]= 233;
 				meuArray2 [8]= 622;
 				meuArray2 [9]= 8522;
-				meuArray2 [10]= 564; //estoura a pilha
+				//meuArray2 [10]= 564; //estoura a pilha
 				
-		System.out.println(meuArray2[9]); //esperado valor 622
+		System.out.println(meuArray2[9]); //esperado valor 8522
 		System.out.println(meuArray2[2]); //esperado valor 85
 		}
 }
