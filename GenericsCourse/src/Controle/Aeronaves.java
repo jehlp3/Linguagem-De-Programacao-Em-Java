@@ -18,13 +18,13 @@ public class Aeronaves {
 	}
 	
 	public void listaVoos() {
-		System.out.println("[");
+		System.out.print("[");
 		if (!listaAeronaves.isEmpty()) {
-			System.out.println(" " + listaAeronaves.get(0));
+			System.out.print(listaAeronaves.get(0));
 		}
 		for (int i = 1; i < listaAeronaves.size(); i++) {
-			System.out.println(" "+ listaAeronaves.get(i));
+			System.out.print(" "+ listaAeronaves.get(i));
 		}
-	System.out.println("]");
+	System.out.print("]");
 	}
 }
