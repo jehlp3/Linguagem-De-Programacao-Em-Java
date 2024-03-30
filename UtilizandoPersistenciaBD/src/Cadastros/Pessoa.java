@@ -1,21 +1,21 @@
 package Cadastros;
 
-public class Pessoa {
+public class Pessoa { //Classe, atributos da classe
 	private int idPessoa;
 	private String nomePessoa;
 	private String email;
 	
-	public Pessoa() {
+	public Pessoa() {		//construtor
 		
 	}
 	
-	public Pessoa(String nomePessoa, String email) {
+	public Pessoa(String nomePessoa, String email) {   //ALTERAÇÕES (nome+email)
 		super();
 		this.nomePessoa = nomePessoa;
 		this.email = email;
 	}
 	
-	public Pessoa (int idPessoa, String nomePessoa, String email) {
+	public Pessoa (int idPessoa, String nomePessoa, String email) {  //INCLUSÕES 
 		super();
 		this.idPessoa = idPessoa;
 		this.nomePessoa = nomePessoa;

@@ -21,11 +21,11 @@ public class Dao {
 		
 	    String url = "jdbc:postgresql://localhost:5432/cadastros";
 	    String user = "postgres";
-	    String password = "SENHAERRADA";
+	    String password = "SENHA INCORRETA";
 	    try {
 	        Class.forName("org.postgresql.Driver");
 	        con = DriverManager.getConnection(url, user, password); 
-	        System.out.println("Conexão ok");
+	        //System.out.println("Conexão ok");
 	    } catch (SQLException | ClassNotFoundException ex) {
 	        System.out.println("Erro ao conectar com o banco");
 	    }

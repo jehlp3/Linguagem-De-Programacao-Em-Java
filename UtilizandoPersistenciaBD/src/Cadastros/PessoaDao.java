@@ -4,9 +4,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PessoaDao extends Dao{
+public class PessoaDao extends Dao {
 	
-	public void incluirPessoa(Pessoa p) throws Exception{
+	public void incluirPessoa(Pessoa p) throws Exception {
 		open();
 		stmt = con.prepareStatement("insert into pessoa values(?,?,?)");
 		stmt.setInt(1, p.getIdPessoa());
@@ -16,6 +16,8 @@ public class PessoaDao extends Dao{
 		stmt.close();
 		close();
 	}
+
+	
 	public void alterarPessoa(Pessoa p) throws Exception {
 		open();
 		stmt = con.prepareStatement("update Pessoa set nomepessoa = ?, email = ? where idPessoa = ?");
@@ -26,6 +28,7 @@ public class PessoaDao extends Dao{
 		stmt.close();
 		close();
 	}
+
 	public void excluirPessoa(Pessoa p) throws Exception {
 
 		open();
@@ -84,7 +87,6 @@ public class PessoaDao extends Dao{
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
-	
-			}
 		}
 	}
+}
