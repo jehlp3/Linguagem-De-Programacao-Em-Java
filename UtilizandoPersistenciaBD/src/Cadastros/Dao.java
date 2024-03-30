@@ -16,12 +16,12 @@ public class Dao {
 
 	
 	public void open() throws Exception{
-		String varTeste = "Teste";
-		System.out.println(varTeste);
+		//String varTeste = "Teste";
+		//System.out.println(varTeste);
 		
 	    String url = "jdbc:postgresql://localhost:5432/cadastros";
 	    String user = "postgres";
-	    String password = "SENHA INCORRETA";
+	    String password = "SENHAERRADA";
 	    try {
 	        Class.forName("org.postgresql.Driver");
 	        con = DriverManager.getConnection(url, user, password); 

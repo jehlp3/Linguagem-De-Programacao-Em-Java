@@ -7,7 +7,7 @@ import java.util.List;
 public class PessoaDao extends Dao {
 	
 	public void incluirPessoa(Pessoa p) throws Exception {
-		open();
+		open();		//Alterar a perspectiva para debug
 		stmt = con.prepareStatement("insert into pessoa values(?,?,?)");
 		stmt.setInt(1, p.getIdPessoa());
 		stmt.setString(2, p.getNomePessoa());
@@ -18,15 +18,24 @@ public class PessoaDao extends Dao {
 	}
 
 	
-	public void alterarPessoa(Pessoa p) throws Exception {
+	public boolean alterarPessoa(Pessoa p) throws Exception {
 		open();
-		stmt = con.prepareStatement("update Pessoa set nomepessoa = ?, email = ? where idPessoa = ?");
-		stmt.setString(1, p.getNomePessoa());
+		 stmt = con.prepareStatement("update Pessoa set nomepessoa = ?, email = ? where idPessoa = ?");
+		// CORRETO stmt = con.prepareStatement("update Pessoa set nomepessoa = ?, email = ? where idPessoa = ?");
+		try {
+		 stmt.setString(1, p.getNomePessoa());
 		stmt.setString(2, p.getEmail());
 		stmt.setInt(3, p.getIdPessoa());
 		stmt.execute();
+		}catch(SQLException ex) {
+			System.out.println("Erro: "+ex.getMessage()+stmt);
+			stmt.close();
+			close();
+			return false;
+		}
 		stmt.close();
 		close();
+		return true;
 	}
 
 	public void excluirPessoa(Pessoa p) throws Exception {
@@ -42,7 +51,7 @@ public class PessoaDao extends Dao {
 	// retornando um objeto
 	public Pessoa consultarPessoaIndividual(int cod) throws Exception {
 			open();
-			stmt = con.prepareStatement("select * from pessoas where idPessoa = ? ");
+			stmt = con.prepareStatement("select * from pessoa where idPessoa = ? ");
 			stmt.setInt(1, cod);
 			try {
 				rs = stmt.executeQuery();			
@@ -52,7 +61,7 @@ public class PessoaDao extends Dao {
 //		        System.out.println("Falha ao recuperar o registro. Contate TI");
 			}
 			finally {
-				System.out.println("Fechando a conex�o com banco de dados no Finally");
+				System.out.println("Fechando a conexão com banco de dados no Finally");
 				close();
 			}
 			Pessoa p = null;
